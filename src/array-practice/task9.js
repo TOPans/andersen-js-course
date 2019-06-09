@@ -1,22 +1,24 @@
 /**
- * Реализовать функцию indexOfAll в этом файле, и экспортировать ее.
+ * Просто преобразовать содержимое функции task9Old под современный код
  *
- * Первый аргумент - массив, второй - значение
- *
- * Функция возвращает массив со всеми индексами, которые соответствуют переданному значению
- * ([1, 2, 3, 1, 2, 3], 1) -> 1ца в массиве присутствует на 0ой и 3ей позиции. Вернули [0, 3]
- * ([1, 2, 3], 4) -> 4ка в массиве НЕ присутствует. Вернули пустой массив []
- *
- * console.log(indexOfAll([1, 2, 3, 1, 2, 3], 1)); -> [0, 3]
- * console.log(indexOfAll([1, 2, 3], 4)); -> []
+ * Пример вызова
+ * console.log(task9Old()); -> [true, 1]
  */
 
-export function indexOfAll(inputArray, value) {
-  arrayIndexes = [];
-  inputArray.reduce((acc, curVal, index) => {
-    if (curVal === value) {
-      arrayIndexes.push(index);
-    }
-  }, []);
-  return arrayIndexes;
+export function task9Old() {
+  var result = "test".indexOf("est") !== -1;
+  var findResult = [22, 1, 90, 70].filter(function(x) {
+    return x < 3;
+  })[0];
+
+  return [result, findResult];
 }
+
+// Напишите реализацию функции task9Old на ES6+ ниже этого комментария.
+// При желании, можете использовать стрелочную функцию, вместо обычной
+
+export const task9New = () => {
+  let result = "test".includes("est");
+  let findResult = [22, 1, 90, 70].find(x => x < 3);
+  return [result, findResult];
+};
