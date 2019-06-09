@@ -1,24 +1,25 @@
 /**
- * Просто преобразовать функцию task5Old под современный код
+ * Реализовать функцию createGenerator в этом файле, и экспортировать ее.
  *
- * Пример вызова
- * console.log(task5Old(["test", 42], { name: "foo", val: 7 })); -> ['test', 42, 'foo', 7]
+ * При каждом вызове метода .next() происходит возврат следующего значения из массива
+ * Когда все элементы будут возвращены,
+ * следующие вызовы метода .next() должны возвращать строку 'Complete!'
+ *
+ * const generator = createGenerator([1, '6', 3, 2]);
+ * generator.next(); -> 1
+ * generator.next(); -> '6'
+ * generator.next(); -> 3
+ * generator.next(); -> 2
+ * generator.next(); -> 'Complete!'
+ * generator.next(); -> 'Complete!'
  */
 
-export function task5Old(array, obj) {
-  var name = array[0];
-  var val = array[1];
-  var objName = obj.name;
-  var objValue = obj.val;
-  return [name, val, objName, objValue];
+export function createGenerator(inputArray) {
+  let currentCount = 0;
+
+  return {
+    next() {
+      return currentCount < inputArray.length ? inputArray[currentCount++] : 'Complete';
+    },
+  };
 }
-
-// Напишите реализацию функции task5Old на ES6+ ниже этого комментария.
-// При желании, можете использовать стрелочную функцию, вместо обычной
-
-export const task5New = ([name, val], { name: objName, val: objValue }) => [
-  name,
-  val,
-  objName,
-  objValue
-];
