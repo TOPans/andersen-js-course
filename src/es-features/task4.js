@@ -33,11 +33,13 @@ export function task4Old() {
 export function task4New() {
   let x = 10;
   let y = 20;
-  foo = () => "test";
+  let foo = () => "test";
   return {
     x,
     y,
-    bar: (bar = () => x + y),
-    ["baz" + foo()]: "new feild"
+    bar() {
+      return this.x + this.y;
+    },
+    [`baz${foo()}`]: "new feild"
   };
 }

@@ -33,7 +33,8 @@ export function task8New() {
     nums: [0, 2, 5, 10, 15],
     fives: [],
     calculateNumsFive() {
-      return (this.fives = this.nums.filter(item => item % 5 === 0));
+      this.fives = this.nums.filter(item => item % 5 === 0);
+      return this.fives;
     }
   };
   return obj.calculateNumsFive();

@@ -8,10 +8,10 @@
 export function task6Old() {
   function userModule() {
     return {
-      name: 'Max',
+      name: "Max",
       value: 100,
-      role: { name: 'Admin' },
-      cases: [{ id: '1' }],
+      role: { name: "Admin" },
+      cases: [{ id: "1" }]
     };
   }
 
@@ -31,19 +31,19 @@ export function task6Old() {
 export function task6New() {
   function userModule() {
     return {
-      name: 'Max',
+      name: "Max",
       value: 100,
-      role: { name: 'Admin' },
-      cases: [{ id: '1' }],
+      role: { name: "Admin" },
+      cases: [{ id: "1" }]
     };
   }
 
-  var {
+  const {
     name,
     value,
     role: { name: role },
-    isActive: isActive = isActive === undefined ? false : isActive,
-    cases: [{ id: firstCaseId }],
+    isActive = false,
+    cases: [{ id: firstCaseId }]
   } = userModule();
 
   return [name, value, role, isActive, firstCaseId];

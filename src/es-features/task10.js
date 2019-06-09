@@ -71,7 +71,7 @@ class NewB extends NewA {
   }
 
   getName(text) {
-    return super.getName() + " " + text;
+    return `${super.getName()} ${text}`;
   }
 
   getAge() {
@@ -91,11 +91,11 @@ class NewB extends NewA {
   }
 }
 
-export function task10New() {
-  var b = new NewB("Max", 12);
+function task10New() {
+  const b = new NewB("Max", 12);
   console.log(b.getName("Best")); // Max Best
   console.log(b.getAge()); // 12
-  console.log(b.defaultUser()); // {name: 'test', age: 0}
+  console.log(NewB.defaultUser()); // {name: 'test', age: 0}
   b.color = "red";
   console.log(b.color); // red
   return b;
