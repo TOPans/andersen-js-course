@@ -17,7 +17,7 @@
  */
 
 export function arrayDiff(firstArray, secondArray) {
-  return firstArray
-    .filter(item => secondArray.indexOf(item) == -1)
-    .concat(secondArray.filter(item => firstArray.indexOf(item) == -1));
+  return [...firstArray, ...secondArray].filter(
+    item => !secondArray.includes(item) || !firstArray.includes(item)
+  );
 }

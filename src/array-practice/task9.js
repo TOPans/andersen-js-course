@@ -12,7 +12,11 @@
  */
 
 export function indexOfAll(inputArray, value) {
-  return inputArray
-    .map((curValue, index) => (curValue === value ? index : -1))
-    .filter(elem => elem !== -1);
+  arrayIndexes = [];
+  inputArray.reduce((acc, curVal, index) => {
+    if (curVal === value) {
+      arrayIndexes.push(index);
+    }
+  }, []);
+  return arrayIndexes;
 }

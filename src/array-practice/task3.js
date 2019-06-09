@@ -10,7 +10,9 @@
  * forEachRight([1, 2, 3, 4], val => console.log(val)); -> в консоль 4 3 2 1
  */
 
-export function forEachRight(inputArray, val) {
-  inputArray.reverse().forEach(val);
+function forEachRight(inputArray, val) {
+  let reverseArray = []
+    .concat(inputArray)
+    .reverse()
+    .forEach(val);
 }
-

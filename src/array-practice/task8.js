@@ -13,5 +13,5 @@
  */
 
 export function without(inputArray, ...inputArrayArgs) {
-  return inputArray.filter(elem => inputArrayArgs.indexOf(elem) == -1);
+  return inputArray.filter(elem => !inputArrayArgs.includes(elem));
 }

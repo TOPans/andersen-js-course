@@ -9,5 +9,5 @@
  */
 
 export function union(firstArray, secondArray) {
-  return firstArray.concat(secondArray).filter((item, index, arr) => arr.indexOf(item) == index);
+  return [...new Set([...firstArray, ...secondArray])];
 }
