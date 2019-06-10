@@ -13,3 +13,13 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+
+export function createGenerator(inputArray) {
+  let currentCount = 0;
+
+  return {
+    next() {
+      return currentCount < inputArray.length ? inputArray[currentCount++] : 'Complete';
+    },
+  };
+}
